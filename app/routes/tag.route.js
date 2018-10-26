@@ -9,7 +9,7 @@ module.exports = (app) => {
     app.get('/tags', tag.findAll);
 
     // Retrive game by ID
-    app.get('/tags/:id', tag.findOneGameById)
+    app.get('/tags/:id', tag.findOneById)
 
     /// PUT COMMANDS ----------------------
     // Update one game by ID

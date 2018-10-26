@@ -2,7 +2,7 @@ const Tag = require('../models/tag.model.js');
 
 exports.create = (req,res) => {
     console.log(req.body);
-    const tag = new Game(req.body);
+    const tag = new Tag(req.body);
     tag.save()
     .then(data => {
         return res.send(data);
@@ -19,7 +19,7 @@ exports.findAll = (req, res) => {
     });
 };
 
-exports.findOneGameById = (req,res) => {
+exports.findOneById = (req,res) => {
     Tag.findById(req.params.id)
     .then(tag => {
         if(!tag) return res.status(404).send({message: "Found no game with id: " + req.params.id});
@@ -28,13 +28,6 @@ exports.findOneGameById = (req,res) => {
     .catch(err => {
         res.status(400).send({message: "Error: " + err.message});
     })
-};
-
-exports.findGamesByPlatform = (req, res) => {
-    Tag.find({platform: req.params.platform},(err, tags)=>{
-        if(err) return res.status(100).send({message: "No games :("});
-        return res.status(200).send(tags);
-    });
 };
 
 exports.update = (req,res) => {
