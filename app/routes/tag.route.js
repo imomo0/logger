@@ -1,5 +1,5 @@
 module.exports = (app) => {
-    const games = require('../controllers/tag.controller.js');
+    const tag = require('../controllers/tag.controller.js');
 
     // Creat a new tags
     app.post('/tags', tag.create);
