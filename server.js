@@ -19,7 +19,7 @@ require('./app/routes/tag.routes.js')(app);
 let port = process.env.PORT || 3000;
 
 app.get('/', (req,res)=>{
-    res.json({"message": "Welcome to retrogame api"})
+    res.json({"message": "Welcome to logger api"})
 });
 
 app.listen(port);
